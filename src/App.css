@@ -1,79 +1,144 @@
 /* Parallax */
 .parallax-container {
-    position: relative;
-    min-height: 100vh;
-    background-color: #f3f4f6;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .parallax-text-wrapper {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14rem;
-  }
-  
-  .parallax-h1 {
-    font-size: 6rem;
-    color: #1f2937;
-    margin-left: 1rem;
-  }
+  position: relative;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .parallax-h2 {
-    font-size: 6rem;
-    color: #1f2937;
-    margin: 0;
-    margin-right: 1rem;
-  }
-  
-  .parallax-image {
-    position: absolute;
-    width: 55rem;
-    height: auto;
-    z-index: 10;
-  }
-  
-  /* transición orgánica de blobs */
-  .multi-layer-blob-transition {
-    position: relative;
-    width: 100%;
-    height: 150px; 
-    overflow: hidden;
-  }
-  
-  .blob-transition {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .blob-layer-1 {
-    z-index: 1;
-  }
-  
-  .blob-layer-2 {
-    z-index: 2;
-  }
+.parallax-text-wrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14rem;
+  z-index: 1;
+}
 
+.parallax-h1 {
+  font-size: 6rem;
+  color: #1f2937;
+  margin-left: 1rem;
+}
 
-  .next-section {
-    background-color: #fff;
-    padding: 2rem;
-    text-align: center;
-  }
+.parallax-h2 {
+  font-size: 6rem;
+  color: #1f2937;
+  margin: 0;
+  margin-right: 1rem;
+}
 
-  h3 {
-    font-size: 3.6rem;
-    color: #1f2937;
+.glitch-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-image-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 55rem;
+  height: auto;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.glitch-image-container img {
+  position: relative;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  width: 100%;
+  /* Calcula el alto de cada stack en función del número de capas */
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc((var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  /* Animación de entrada y glitch */
+  animation: stack 340ms cubic-bezier(.46, .29, 0, 1.24) 1 backwards calc(var(--index) * 120ms),
+    glitch 1.2s ease infinite 2s alternate-reverse;
+}
+
+/* Define un desplazamiento distinto para pares e impares */
+.glitch-image-container img:nth-child(odd) {
+  --glitch-translate: 0.5rem;
+}
+
+.glitch-image-container img:nth-child(even) {
+  --glitch-translate: -0.5rem;
+}
+
+/* Keyframes para la animación de entrada (stack) */
+@keyframes stack {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
   }
-  p {
-    font-size: 2.6rem;
-    color: #1f2937;
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
   }
-  
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+  }
+}
+
+/* Keyframes para el efecto glitch */
+@keyframes glitch {
+  0% {
+    transform: translate(var(--glitch-translate));
+  }
+  2% {
+    transform: translate(calc(var(--glitch-translate) * -1));
+  }
+  4%,
+  100% {
+    transform: none;
+  }
+}
+
+/* Resto de estilos (transición orgánica, etc.) */
+.multi-layer-blob-transition {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.blob-transition {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.blob-layer-1 {
+  z-index: 1;
+}
+
+.blob-layer-2 {
+  z-index: 2;
+}
+
+.next-section {
+  background-color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 3.6rem;
+  color: #1f2937;
+}
+
+p {
+  font-size: 2.6rem;
+  color: #1f2937;
+}
