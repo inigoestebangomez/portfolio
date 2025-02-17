@@ -1,8 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import GlitchImage from "../Components/GlitchImage";
-import WaveTransition from "../Components/WaveTransition";
-import NextSection from "../Components/NextSection";
+// import WaveTransition from "../Components/WaveTransition";
+import ProjectsSection from "../Components/ProjectsSection";
 
 function Home() {
   const refX = useRef(null);
@@ -34,10 +34,10 @@ function Home() {
       <section ref={refX} className="parallax-container">
         <div className="parallax-text-wrapper">
           <motion.h1 style={{ x: textX, opacity: textOpacity }} className="parallax-h1">
-            Iñigo Esteban
+            IÑIGO ESTEBAN
           </motion.h1>
           <motion.h2 style={{ x: textX, opacity: textOpacity }} className="parallax-h2">
-            Web Developer
+            WEB DEVELOPER
           </motion.h2>
         </div>
         <div className={activeGlitch ? "activate-glitch" : ""}>
@@ -45,8 +45,8 @@ function Home() {
         </div>
       </section>
 
-      <WaveTransition scrollYProgress={scrollYProgress} />
-      <NextSection scrollYProgress={scrollYProgress} />
+      {/* <WaveTransition scrollYProgress={scrollYProgress} /> */}
+      <ProjectsSection scrollYProgress={scrollYProgress} />
     </>
   );
 }
