@@ -16,12 +16,42 @@ import {
 } from "framer-motion";
 
 const projects = [
-  { id: 1, title: "WINE TASTING NOTES", des: "React Native + Expo Router", img: winevalue, link: "#" },
-  { id: 2, title: "ROY", des: "VueJS + NuxtJS", img: roy, link: "#" },
-  { id: 3, title: "LIVEWAVE", des: "React Native", img: livewave, link: "#" },
-  { id: 4, title: "COOLMEX", des: "React + NodeJS", img: coolmex, link: "#" },
-  { id: 5, title: "WINEWEB", des: "React + NodeJS", img: wineweb, link: "#" },
-  { id: 6, title: "WORKOUTSWEB", des: "React + NodeJS", img: workoutsweb, link: "#"},
+  {
+    id: 1,
+    title: "WINE TASTING NOTES",
+    des: "React Native + Expo Router | Supabase",
+    img: winevalue,
+    link: "#",
+  },
+  { id: 2, title: "ROY", des: "VueJs + NuxtJs", img: roy, link: "#" },
+  {
+    id: 3,
+    title: "LIVEWAVE",
+    des: "React Native | Supabase",
+    img: livewave,
+    link: "#",
+  },
+  {
+    id: 4,
+    title: "COOLMEX",
+    des: "React + NodeJs | NodeJs + Express",
+    img: coolmex,
+    link: "#",
+  },
+  {
+    id: 5,
+    title: "WINEWEB",
+    des: "React + NodeJs | NodeJs + Express",
+    img: wineweb,
+    link: "#",
+  },
+  {
+    id: 6,
+    title: "WORKOUTSWEB",
+    des: "React + NodeJs | NodeJs + Express",
+    img: workoutsweb,
+    link: "#",
+  },
 ];
 
 function Carousel() {
@@ -71,24 +101,32 @@ function Carousel() {
         ))}
       </ul>
 
-      <AnimatePresence>
+      <AnimatePresence mode="popLayout">
         {hovered && (
           <motion.div
+            key={hovered.id}
             className="floating-preview"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            // El 'style' se encarga de lo dinámico (el movimiento)
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
             style={{
               x: smoothMouseX,
               y: smoothMouseY,
               rotate: transform,
               translateX: "-50%",
-              translateY: "-50%", 
+              translateY: "-50%",
             }}
           >
-            <img src={hovered.img} alt={hovered.title} />
+            <motion.img
+              key={hovered.img}
+              src={hovered.img}
+              alt={hovered.title}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6 }}
+            />
           </motion.div>
         )}
       </AnimatePresence>

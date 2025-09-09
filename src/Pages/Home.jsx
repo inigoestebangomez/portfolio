@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import GlitchImage from "../Components/GlitchImage";
 import ProjectsSection from "../Components/ProjectsSection";
+import Footer from "../Components/Footer";
 
 function Home() {
   const refX = useRef(null);
@@ -22,9 +23,9 @@ function Home() {
     return () => unsubscribe();
   }, [scrollYProgress]);
 
-  const h1X = useTransform(scrollYProgress, [0.4, 1], ["0%", "-50%"]);
-  const h2X = useTransform(scrollYProgress, [0.4, 1], ["0%", "50%"]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const h1X = useTransform(scrollYProgress, [0.45, 1], ["0%", "-50%"]);
+  const h2X = useTransform(scrollYProgress, [0.45, 1], ["0%", "50%"]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.95], [1, 0]);
 
   return (
     <>
@@ -42,6 +43,7 @@ function Home() {
         </div>
       </section>
       <ProjectsSection />
+      <Footer />
     </>
   );
 }
