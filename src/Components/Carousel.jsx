@@ -1,10 +1,5 @@
 import { useState, useRef } from "react";
-import roy from "../images/roy.gif";
-import coolmex from "../images/coolmex.gif";
-import wineweb from "../images/wineweb.gif";
-import workoutsweb from "../images/workoutsweb.gif";
-import winevalue from "../images/wine-tasting-notes.gif";
-import livewave from "../images/livewave.gif";
+import { projects } from "../data/projects.js";
 
 // Importamos los hooks necesarios de Framer Motion
 import {
@@ -14,45 +9,7 @@ import {
   useTransform,
   useSpring,
 } from "framer-motion";
-
-const projects = [
-  {
-    id: 1,
-    title: "WINE TASTING NOTES",
-    des: "React Native + Expo Router | Supabase",
-    img: winevalue,
-    link: "#",
-  },
-  { id: 2, title: "ROY", des: "VueJs + NuxtJs", img: roy, link: "#" },
-  {
-    id: 3,
-    title: "LIVEWAVE",
-    des: "React Native | Supabase",
-    img: livewave,
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "COOLMEX",
-    des: "React + NodeJs | NodeJs + Express",
-    img: coolmex,
-    link: "#",
-  },
-  {
-    id: 5,
-    title: "WINEWEB",
-    des: "React + NodeJs | NodeJs + Express",
-    img: wineweb,
-    link: "#",
-  },
-  {
-    id: 6,
-    title: "WORKOUTSWEB",
-    des: "React + NodeJs | NodeJs + Express",
-    img: workoutsweb,
-    link: "#",
-  },
-];
+import { Link } from "react-router-dom";
 
 function Carousel() {
   const [hovered, setHovered] = useState(null);
@@ -89,15 +46,20 @@ function Carousel() {
       <p className="recent-work-p">RECENT WORK</p>
       <ul className="project-list">
         {projects.map((p) => (
-          <li
+          <motion.li
             key={p.id}
             className="project-item"
             onMouseEnter={() => setHovered(p)}
             onMouseLeave={() => setHovered(null)}
+            whileHover={{
+              scale: 0.96,
+              y: -5,
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <h3>{p.title}</h3>
             <p>{p.des}</p>
-          </li>
+          </motion.li>
         ))}
       </ul>
 
@@ -106,6 +68,8 @@ function Carousel() {
           <motion.div
             key={hovered.id}
             className="floating-preview"
+            onMouseEnter={() => setHovered(hovered)}
+            onMouseLeave={() => setHovered(null)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -116,6 +80,7 @@ function Carousel() {
               rotate: transform,
               translateX: "-50%",
               translateY: "-50%",
+              pointerEvents: "none",
             }}
           >
             <motion.img
@@ -125,8 +90,12 @@ function Carousel() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
             />
+            {/* Botón centrado y clicable */}
+            <Link to={`/work/${hovered.slug}`} className="preview-button">
+              View
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

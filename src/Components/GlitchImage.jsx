@@ -1,4 +1,4 @@
-import mainPicture from "../images/Prueba de cara.png";
+import mainPicture from "../../public/images/Prueba de cara.png";
 
 const GlitchImage = () => {
   return (
