@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { projects } from "../data/projects.js";
+import { projects } from "../data/projectData.js";
 
 // Importamos los hooks necesarios de Framer Motion
 import {
@@ -84,8 +84,8 @@ function Carousel() {
             }}
           >
             <motion.img
-              key={hovered.img}
-              src={hovered.img}
+              key={hovered.preview}
+              src={hovered.preview}
               alt={hovered.title}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
