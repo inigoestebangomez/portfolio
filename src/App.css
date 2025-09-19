@@ -450,10 +450,6 @@ footer {
 }
 .meta-list a:hover { color: var(--accent); }
 
-/* GALLERY: full-bleed images
-   trick: each figure's img will be centered and stretched to viewport width,
-   while remaining inside the centered container.
-*/
 .work-gallery {
   --figure-gap: 2.5rem;
   display: flex;
