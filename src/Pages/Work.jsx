@@ -1,94 +1,125 @@
+// src/pages/Work.jsx
+import { useRef } from "react";
 import { useParams, Link } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { projects } from "../data/projectData.js";
-import { motion } from "framer-motion";
 
 export default function Work() {
   const { slug } = useParams();
+
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Parallax: logo se mueve más y escala un poco; fondo se mueve menos
+  const logoY = useTransform(scrollYProgress, [0, 1], [0, -120]); // logo sube hasta -120px
+  const logoScale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, -28]); // fondo se mueve menos
+
+  // busca proyecto
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return <h3 className="not-found">Project not found!</h3>;
   }
 
-  // "Next case"
+  // next case
   const keys = projects.map((p) => p.slug);
-  const idx = keys.indexOf(slug);
+  const idx = Math.max(0, keys.indexOf(slug));
   const next = projects[(idx + 1) % projects.length];
 
   return (
     <div className="work-detail">
-      <div className="work-grid">
-        {/* META / SIDEBAR */}
-        <aside className="work-meta">
-          <div className="meta-inner">
-            <Link to="/" className="meta-back">← Home</Link>
+      {/* 1. Header / Meta arriba */}
+      <header className="work-top-meta">
+        <div className="meta-inner">
+          <Link to="/" className="meta-back">← Home</Link>
 
-            <h1 className="work-title">{project.title}</h1>
-            <p className="work-short">{project.des}</p>
-            {project.longDes && <p className="work-long">{project.longDes}</p>}
+          <h1 className="work-title">{project.title}</h1>
 
-            {project.services && project.services.length > 0 && (
-              <div className="meta-block">
-                <h4>Services</h4>
-                <ul className="meta-list">
-                  {project.services.map((s, i) => (
-                    <li key={i}>
-                      <a href={s.url} target="_blank" rel="noreferrer">
-                        {s.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+          <div className="meta-row">
+            <div className="meta-col">
+              <h4 className="meta-heading">Services</h4>
+              <ul className="meta-list">
+                {project.services?.map((s, i) => (
+                  <li key={i}>
+                    <a href={s.url} target="_blank" rel="noreferrer">{s.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-            {project.credits && project.credits.length > 0 && (
-              <div className="meta-block">
-                <h4>Credits</h4>
-                <ul className="meta-list">
-                  {project.credits.map((c, i) => (
-                    <li key={i}>
-                      <strong>{c.role}:</strong> {c.person}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+            <div className="meta-col">
+              <h4 className="meta-heading">Credits</h4>
+              <ul className="meta-list">
+                {project.credits?.map((c, i) => (
+                  <li key={i}>{c.role}: {c.person}</li>
+                ))}
+              </ul>
+            </div>
 
-            <div className="meta-footer">
-              {project.year && <div className="meta-year">{project.year}</div>}
+            <div className="meta-col">
+              <h4 className="meta-heading">Year</h4>
+              <div className="meta-list">{project.year}</div>
             </div>
           </div>
-        </aside>
+        </div>
+      </header>
 
-        {/* GALLERY (full-bleed images / GIFs) */}
-        <main className="work-gallery">
-          {project.img.map((src, i) => (
+      {/* 2. HERO: imagen principal (project.img[0]) + logo superpuesto con parallax */}
+      <section className="hero-section" ref={heroRef}>
+        <motion.img
+          className="hero-bg"
+          src={project.img?.[0] ?? project.preview ?? ""}
+          alt={`${project.title} hero`}
+          style={{ y: bgY }}
+          initial={{ opacity: 0, scale: 1.02 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+        />
+
+        {project.logo?.[0] && (
+          <motion.div
+            className="hero-logo-wrap"
+            style={{ y: logoY, scale: logoScale }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.9, ease: "easeOut" }}
+            aria-hidden
+          >
+            <img className="hero-logo" src={project.logo[0]} alt={`${project.title} logo`} />
+          </motion.div>
+        )}
+      </section>
+
+      {/* 3. Presentación / sección con GIF en mockup o dos imágenes - abajo doy ideas */}
+      <main className="work-main">
+        <section className="work-intro">
+        </section>
+
+        {/* 4. Gallery: resto de imágenes (slice(1)) */}
+        <section className="work-gallery">
+          {project.img?.slice(1).map((src, i) => (
             <motion.figure
               className="work-figure"
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 26 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.18 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              {/* Si quieres logo flotante sobre el primer GIF */}
-              {i === 0 && (
-                <div className="project-hero-logo" aria-hidden>
-                  <span className="hero-title">{project.title}</span>
-                </div>
-              )}
-
-              <img src={src} alt={`${project.title} preview ${i + 1}`} />
+              <img src={src} alt={`${project.title} preview ${i + 2}`} />
             </motion.figure>
           ))}
-        </main>
-      </div>
+        </section>
+      </main>
 
-      {/* FOOT / NAV: Next case & Live site */}
+      {/* 5. NEXT / LIVE area */}
       <div className="work-nav">
         <div className="work-nav-left">
-          {project.services && project.services.find(s => s.name.toLowerCase().includes("live")) ? (
+          {project.services?.find(s => s.name.toLowerCase().includes("live")) && (
             <a
               className="live-link"
               href={project.services.find(s => s.name.toLowerCase().includes("live")).url}
@@ -97,7 +128,7 @@ export default function Work() {
             >
               Live site ↗
             </a>
-          ) : null}
+          )}
         </div>
 
         <div className="work-nav-right">
