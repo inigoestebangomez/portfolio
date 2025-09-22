@@ -43,11 +43,25 @@ export default function Work() {
             <div className="meta-col">
               <h4 className="meta-heading">Services</h4>
               <ul className="meta-list">
-                {project.services?.map((s, i) => (
-                  <li key={i}>
-                    <a href={s.url} target="_blank" rel="noreferrer">{s.name}</a>
-                  </li>
-                ))}
+          {project.services
+            ?.filter(s => !s.name.toLowerCase().includes("live"))
+            .map((s, i) => (
+              <li key={i}>
+                <a href={s.url} target="_blank" rel="noreferrer">{s.name}</a>
+              </li>
+            ))}
+          {project.services?.find(s => s.name.toLowerCase().includes("live")) && (
+            <li>
+              <a
+                className="live-link"
+                href={project.services.find(s => s.name.toLowerCase().includes("live")).url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live site ↗
+              </a>
+            </li>
+          )}
               </ul>
             </div>
 
@@ -117,19 +131,6 @@ export default function Work() {
 
       {/* 5. NEXT / LIVE area */}
       <div className="work-nav">
-        <div className="work-nav-left">
-          {project.services?.find(s => s.name.toLowerCase().includes("live")) && (
-            <a
-              className="live-link"
-              href={project.services.find(s => s.name.toLowerCase().includes("live")).url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Live site ↗
-            </a>
-          )}
-        </div>
-
         <div className="work-nav-right">
           {next && (
             <Link to={`/work/${next.slug}`} className="next-case">
