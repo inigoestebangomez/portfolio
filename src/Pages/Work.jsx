@@ -14,9 +14,9 @@ export default function Work() {
   });
 
   // Parallax: logo se mueve más y escala un poco; fondo se mueve menos
-  const logoY = useTransform(scrollYProgress, [0, 1], [0, -120]); // logo sube hasta -120px
+  const logoY = useTransform(scrollYProgress, [0, 1], [0, -180]); 
   const logoScale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
-  const bgY = useTransform(scrollYProgress, [0, 1], [0, -28]); // fondo se mueve menos
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, -20]);
 
   // busca proyecto
   const project = projects.find((p) => p.slug === slug);
@@ -32,7 +32,7 @@ export default function Work() {
 
   return (
     <div className="work-detail">
-      {/* 1. Header / Meta arriba */}
+
       <header className="work-top-meta">
         <div className="meta-inner">
           <Link to="/" className="meta-back">← Home</Link>
@@ -68,11 +68,10 @@ export default function Work() {
         </div>
       </header>
 
-      {/* 2. HERO: imagen principal (project.img[0]) + logo superpuesto con parallax */}
       <section className="hero-section" ref={heroRef}>
         <motion.img
           className="hero-bg"
-          src={project.img?.[0] ?? project.preview ?? ""}
+          src={project.img?.[2] ?? project.preview ?? ""}
           alt={`${project.title} hero`}
           style={{ y: bgY }}
           initial={{ opacity: 0, scale: 1.02 }}
