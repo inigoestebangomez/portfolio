@@ -1,8 +1,9 @@
-// src/pages/Work.jsx
 import { useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { projects } from "../data/projectData.js";
+import Footer from "../Components/Footer.jsx";
+import WorkFigure from "../Components/WorkFigure.jsx";
 
 export default function Work() {
   const { slug } = useParams();
@@ -14,7 +15,7 @@ export default function Work() {
   });
 
   // Parallax: logo se mueve más y escala un poco; fondo se mueve menos
-  const logoY = useTransform(scrollYProgress, [0, 1], [0, -180]); 
+  const logoY = useTransform(scrollYProgress, [0, 1], [0, -180]);
   const logoScale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
   const bgY = useTransform(scrollYProgress, [0, 1], [0, -20]);
 
@@ -31,11 +32,12 @@ export default function Work() {
   const next = projects[(idx + 1) % projects.length];
 
   return (
-    <div className="work-detail">
-
+    <>
       <header className="work-top-meta">
         <div className="meta-inner">
-          <Link to="/" className="meta-back">← Home</Link>
+          <Link to="/" className="meta-back">
+            ← Home
+          </Link>
 
           <h1 className="work-title">{project.title}</h1>
 
@@ -43,25 +45,33 @@ export default function Work() {
             <div className="meta-col">
               <h4 className="meta-heading">Services</h4>
               <ul className="meta-list">
-          {project.services
-            ?.filter(s => !s.name.toLowerCase().includes("live"))
-            .map((s, i) => (
-              <li key={i}>
-                <a href={s.url} target="_blank" rel="noreferrer">{s.name}</a>
-              </li>
-            ))}
-          {project.services?.find(s => s.name.toLowerCase().includes("live")) && (
-            <li>
-              <a
-                className="live-link"
-                href={project.services.find(s => s.name.toLowerCase().includes("live")).url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Live site ↗
-              </a>
-            </li>
-          )}
+                {project.services
+                  ?.filter((s) => !s.name.toLowerCase().includes("live"))
+                  .map((s, i) => (
+                    <li key={i}>
+                      <a href={s.url} target="_blank" rel="noreferrer">
+                        {s.name}
+                      </a>
+                    </li>
+                  ))}
+                {project.services?.find((s) =>
+                  s.name.toLowerCase().includes("live")
+                ) && (
+                  <li>
+                    <a
+                      className="live-link"
+                      href={
+                        project.services.find((s) =>
+                          s.name.toLowerCase().includes("live")
+                        ).url
+                      }
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Live site ↗
+                    </a>
+                  </li>
+                )}
               </ul>
             </div>
 
@@ -69,7 +79,9 @@ export default function Work() {
               <h4 className="meta-heading">Credits</h4>
               <ul className="meta-list">
                 {project.credits?.map((c, i) => (
-                  <li key={i}>{c.role}: {c.person}</li>
+                  <li key={i}>
+                    {c.role}: {c.person}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -82,10 +94,11 @@ export default function Work() {
         </div>
       </header>
 
+      {/* Hero: imagen grande + logo */}
       <section className="hero-section" ref={heroRef}>
         <motion.img
           className="hero-bg"
-          src={project.img?.[2] ?? project.preview ?? ""}
+          src={project.preview ?? ""}
           alt={`${project.title} hero`}
           style={{ y: bgY }}
           initial={{ opacity: 0, scale: 1.02 }}
@@ -102,29 +115,31 @@ export default function Work() {
             transition={{ delay: 0.45, duration: 0.9, ease: "easeOut" }}
             aria-hidden
           >
-            <img className="hero-logo" src={project.logo[0]} alt={`${project.title} logo`} />
+            <img
+              className="hero-logo"
+              src={project.logo[0]}
+              alt={`${project.title} logo`}
+            />
           </motion.div>
         )}
       </section>
 
-      {/* 3. Presentación / sección con GIF en mockup o dos imágenes - abajo doy ideas */}
       <main className="work-main">
-        <section className="work-intro">
-        </section>
+        {/* <section className="work-intro">
+        </section> */}
 
-        {/* 4. Gallery: resto de imágenes (slice(1)) */}
+        {/* Gallery */}
         <section className="work-gallery">
-          {project.img?.slice(1).map((src, i) => (
-            <motion.figure
-              className="work-figure"
+          {project.img?.map((src, i) => (
+            <motion.div
               key={i}
-              initial={{ opacity: 0, y: 26 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.18 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 40, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <img src={src} alt={`${project.title} preview ${i + 2}`} />
-            </motion.figure>
+              <WorkFigure src={src} alt={`${project.title} preview ${i + 1}`} />
+            </motion.div>
           ))}
         </section>
       </main>
@@ -139,6 +154,8 @@ export default function Work() {
           )}
         </div>
       </div>
-    </div>
+
+      <Footer />
+    </>
   );
 }

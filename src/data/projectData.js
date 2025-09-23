@@ -10,7 +10,11 @@ export const projects = [
     title: "WINE TASTING NOTES",
     des: "React Native + Expo Router | Supabase",
     preview: "/images/wine-tasting-notes.gif",
-    img: ["/images/wine-tasting-notes.gif", "/images/wine-tasting-notes-screens.png"],
+    img: [
+      "/images/wine-tasting-notes-1.png", 
+      "/images/wine-tasting-notes-2.png", 
+      "/images/wine-tasting-notes-3.png"
+    ],
     logo: ["/images/wine-tasting-notes-logo.png"],
     slug: "wine-tasting-notes",
     services: [
@@ -58,7 +62,11 @@ export const projects = [
     title: "COOLMEX",
     des: "React + NodeJs | NodeJs + Express",
     preview: "/images/coolmex.gif",
-    img: ["/images/coolmex.gif", "/images/coolmex-1.png" ,"/images/coolmex-2.png", "/images/coolmex-3.png"],
+    img: [ 
+      "/images/coolmex-1.png" ,
+      "/images/coolmex-2.png", 
+      "/images/coolmex-3.png"
+    ],
     logo: ["/images/coolmex-logo.png"],
     slug: "coolmex",
     services: [
