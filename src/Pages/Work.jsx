@@ -98,7 +98,7 @@ export default function Work() {
       <section className="hero-section" ref={heroRef}>
         <motion.img
           className="hero-bg"
-          src={project.preview ?? ""}
+          src={project.hero ?? ""}
           alt={`${project.title} hero`}
           style={{ y: bgY }}
           initial={{ opacity: 0, scale: 1.02 }}

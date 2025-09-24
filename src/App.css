@@ -464,7 +464,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   justify-items: center;
-  align-items: start;
+  align-items: center;
   padding-top: 2rem;
 }
 .work-figure {

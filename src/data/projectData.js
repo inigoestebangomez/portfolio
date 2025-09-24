@@ -16,6 +16,7 @@ export const projects = [
       "/images/wine-tasting-notes-3.png"
     ],
     logo: ["/images/wine-tasting-notes-logo.png"],
+    hero: ["/images/wine-tasting-notes-hero.png"],
     slug: "wine-tasting-notes",
     services: [
       { name: "GitHub", url: "https://github.com/inigoestebangomez/wine-tasting-notes" }
@@ -30,8 +31,9 @@ export const projects = [
     title: "ROY",
     des: "VueJs + NuxtJs",
     preview: "/images/roy.gif",
-    img: ["/images/roy.gif", "/images/roy-4.png", "/images/roy-2.png"],
+    img: ["/images/roy-4.png", "/images/roy-1.png", "/images/roy-2.png"],
     logo: ["/images/roy-logo.png"],
+    hero: ["/images/roy-2.png"],
     slug: "roy",
     services: [
       { name: "GitHub", url: "https://github.com/inigoestebangomez/roy" }
@@ -46,7 +48,13 @@ export const projects = [
     title: "LIVEWAVE",
     des: "React Native | Supabase",
     preview: "/images/livewave.gif",
-    img: ["/images/livewave.gif"],
+    img: [
+      "/images/livewave-1.png",
+      "/images/livewave-2.png",
+      "/images/livewave-3.png",
+      "/images/livewave-4.png"
+    ],
+    hero: ["/images/livewave-hero.png"],
     logo: ["/images/livewave-logo.png"],
     slug: "livewave",
     services: [
@@ -68,6 +76,7 @@ export const projects = [
       "/images/coolmex-3.png"
     ],
     logo: ["/images/coolmex-logo.png"],
+    hero: ["/images/coolmex-2.png"],
     slug: "coolmex",
     services: [
       { name: "GitHub", url: "https://github.com/inigoestebangomez/cool-mex-client" }
@@ -82,8 +91,13 @@ export const projects = [
     title: "WINEWEB",
     des: "React + NodeJs | NodeJs + Express",
     preview: "/images/wineweb.gif",
-    img: ["/images/wineweb.gif"],
+    img: [
+      "/images/wineweb-1.png", 
+      "/images/wineweb-2.png", 
+      "/images/wineweb-3.png"
+    ],
     logo: ["/images/wineweb-logo.png"],
+    hero: ["/images/wineweb.png"],
     slug: "wineweb",
     services: [
       { name: "GitHub", url: "https://github.com/inigoestebangomez/cellar-app" },
@@ -101,8 +115,12 @@ export const projects = [
     title: "WORKOUTSWEB",
     des: "React + NodeJs | NodeJs + Express",
     preview: "/images/workoutsweb.gif",
-    img: [ "/images/workoutsweb.png", "/images/workoutsweb.png"],
+    img: [ 
+      "/images/workoutsweb-1.png", 
+      "/images/workoutsweb-2.png",
+      "/images/workoutsweb-3.png"],
     logo: ["/images/workoutsweb-logo.png"],
+    hero: ["/images/workoutsweb-1.png"],
     slug: "workoutsweb",
     services: [
       { name: "GitHub", url: "https://github.com/FelixFS3D/client-workoutweb" },
