@@ -437,6 +437,9 @@ footer {
   .recent-work-p {
     font-size: 0.8rem;
   }
+  .project-item-link {
+    text-decoration: none;
+  }
   .project-item {
     display: flex;
     flex-direction: column;
