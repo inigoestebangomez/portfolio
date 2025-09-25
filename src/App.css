@@ -65,7 +65,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14rem;
+  gap: 20rem;
   z-index: 1;
 }
 .parallax-h1, .parallax-h2{
@@ -85,7 +85,7 @@ p {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 61rem;
+  max-width: 67rem;
   height: auto;
   margin: 0 auto;
   z-index: 10;
@@ -146,6 +146,7 @@ p {
     transform: none;
   }
 }
+
 
 /* ===== TRANSICIÓN ===== */
 .next-section-content {
@@ -351,6 +352,75 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* TABLET ↓ */
+@media (max-width: 1024px) {
+  .parallax-text-wrapper {
+    gap: 8rem;
+  }
+  .parallax-h1,
+  .parallax-h2 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+  }
+  .glitch-image-container {
+    max-width: 52rem;
+  }
+}
+
+/* MOBILE LANDSCAPE ↓ */
+@media (max-width: 768px) {
+  .parallax-text-wrapper {
+    gap: 3rem;
+  }
+  .parallax-h1,
+  .parallax-h2 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+  }
+  .glitch-image-container {
+    max-width: 40rem;
+    padding: 0 1rem;
+  }
+}
+
+/* MOBILE PORTRAIT ↓ */
+@media (max-width: 480px) {
+  .parallax-container {
+    padding: 0;
+    width: 100vw;
+  }
+  .glitch-image-container {
+    margin-top: 4rem;
+    max-width: 100vw;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+  }
+  .glitch-image-container img {
+    object-fit: cover;        
+    width: 100%;
+    height: 100vh;      
+  }
+  .parallax-text-wrapper {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 90%;
+    text-align: center;
+    z-index: 20;
+  }
+  .parallax-h1,
+  .parallax-h2 {
+    color: var(--color-white);
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
 }
 
 /* ===== WORK ===== */

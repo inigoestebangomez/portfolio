@@ -28,23 +28,6 @@ export const projects = [
   },
   {
     id: 2,
-    title: "ROY",
-    des: "VueJs + NuxtJs",
-    preview: "/images/roy.gif",
-    img: ["/images/roy-4.png", "/images/roy-1.png", "/images/roy-2.png"],
-    logo: ["/images/roy-logo.png"],
-    hero: ["/images/roy-2.png"],
-    slug: "roy",
-    services: [
-      { name: "GitHub", url: "https://github.com/inigoestebangomez/roy" }
-    ],
-    credits: [
-      { role: "Developer", person: "Iñigo Esteban" }
-    ],
-    year: "2024",
-  },
-  {
-    id: 3,
     title: "LIVEWAVE",
     des: "React Native | Supabase",
     preview: "/images/livewave.gif",
@@ -66,7 +49,7 @@ export const projects = [
     year: "2025",
   },
   {
-    id: 4,
+    id: 3,
     title: "COOLMEX",
     des: "React + NodeJs | NodeJs + Express",
     preview: "/images/coolmex.gif",
@@ -83,6 +66,23 @@ export const projects = [
     ],
     credits: [
       { role: "Developer", person: "Iñigo Esteban"}
+    ],
+    year: "2024",
+  },
+  {
+    id: 4,
+    title: "ROY",
+    des: "VueJs + NuxtJs",
+    preview: "/images/roy.gif",
+    img: ["/images/roy-4.png", "/images/roy-1.png", "/images/roy-2.png"],
+    logo: ["/images/roy-logo.png"],
+    hero: ["/images/roy-2.png"],
+    slug: "roy",
+    services: [
+      { name: "GitHub", url: "https://github.com/inigoestebangomez/roy" }
+    ],
+    credits: [
+      { role: "Developer", person: "Iñigo Esteban" }
     ],
     year: "2024",
   },
