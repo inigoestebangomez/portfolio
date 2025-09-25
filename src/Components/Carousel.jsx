@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { projects } from "../data/projectData.js";
 
-// Importamos los hooks necesarios de Framer Motion
+// hooks de Framer Motion
 import {
   motion,
   AnimatePresence,
@@ -15,18 +15,18 @@ function Carousel() {
   const [hovered, setHovered] = useState(null);
   const ref = useRef(null);
 
-  // 1. Usamos MotionValues para las coordenadas del ratón.
+  // 1. MotionValues para las coordenadas del ratón.
   // Esto no causa re-renders y permite animaciones más complejas.
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // Usamos useSpring para suavizar el movimiento de la imagen
+  // useSpring para suavizar el movimiento de la imagen
   const smoothOptions = { damping: 50, stiffness: 300, mass: 0.5 };
   const smoothMouseX = useSpring(mouseX, smoothOptions);
   const smoothMouseY = useSpring(mouseY, smoothOptions);
 
-  // 2. Creamos una transformación para la rotación (el efecto de inclinación)
-  // Mapeamos la posición X del ratón a un valor de rotación en grados.
+  // 2. transformación para la rotación (el efecto de inclinación)
+  // Mapea la posición X del ratón a un valor de rotación en grados.
   const transform = useTransform(
     smoothMouseX,
     [0, ref.current?.clientWidth || 0],
@@ -36,7 +36,7 @@ function Carousel() {
   const handleMouseMove = (e) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
-    // Actualizamos MotionValues en lugar del estado
+    // actualiza MotionValues en lugar del estado
     mouseX.set(e.clientX - rect.left);
     mouseY.set(e.clientY - rect.top);
   };
@@ -46,20 +46,27 @@ function Carousel() {
       <p className="recent-work-p">RECENT WORK</p>
       <ul className="project-list">
         {projects.map((p) => (
-          <motion.li
+          <Link
             key={p.id}
-            className="project-item"
-            onMouseEnter={() => setHovered(p)}
-            onMouseLeave={() => setHovered(null)}
-            whileHover={{
-              scale: 0.96,
-              y: -5,
-            }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            to={`/work/${p.slug}`}
+            className="project-item-link"
           >
-            <h3>{p.title}</h3>
-            <p>{p.des}</p>
-          </motion.li>
+            <motion.li
+              key={p.id}
+              className="project-item"
+              onMouseEnter={() => setHovered(p)}
+              onMouseLeave={() => setHovered(null)}
+              whileHover={{
+                scale: 0.96,
+                y: -5,
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <img src={p.preview} alt={p.title} />
+              <h3>{p.title}</h3>
+              <p>{p.des}</p>
+            </motion.li>
+          </Link>
         ))}
       </ul>
 
