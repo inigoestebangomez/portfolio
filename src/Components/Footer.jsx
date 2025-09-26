@@ -24,7 +24,6 @@ function Footer() {
       <div className="footer-content-center">
         <div className="footer-content">
           <motion.h2 style={{ scale, y }}>Let’s talk!</motion.h2>
-          {/* <motion.p style={{ opacity, y }}>Send me an email.</motion.p> */}
           <motion.div
             className="footer-links"
             style={{ opacity, y }}

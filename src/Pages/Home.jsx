@@ -28,7 +28,7 @@ function Home() {
     return () => unsubscribe();
   }, [scrollYProgress]);
 
-  const start = isMobile ? 0.3 : 0.5; 
+  const start = isMobile ? 0.5 : 0.5; 
   const end   = isMobile ? 0.9 : 1; 
 
   const h1X = useTransform(
