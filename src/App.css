@@ -544,13 +544,13 @@ footer {
 
 /* ===================== RESPONSIVE ===================== */
 /* LAPTOP DESKTOP ↓ */
-@media (max-width: 1439px) and (min-width: 1025px) {
+@media (max-width: 1520px) and (min-width: 1025px) {
   .parallax-text-wrapper {
     gap: 16rem;
   }
   .parallax-h1,
   .parallax-h2 {
-    font-size: 3.3rem
+    font-size: 4.5rem
   }
   .glitch-image-container {
     max-width: 60rem;
