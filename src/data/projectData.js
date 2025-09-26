@@ -52,7 +52,7 @@ export const projects = [
     id: 3,
     title: "COOLMEX",
     des: "React + NodeJs | NodeJs + Express",
-    preview: "/images/coolmex.gif",
+    preview: "/images/coolmex-low.gif",
     img: [ 
       "/images/coolmex-1.png" ,
       "/images/coolmex-2.png", 
@@ -73,7 +73,7 @@ export const projects = [
     id: 4,
     title: "ROY",
     des: "VueJs + NuxtJs",
-    preview: "/images/roy.gif",
+    preview: "/images/roy-low.gif",
     img: ["/images/roy-4.png", "/images/roy-1.png", "/images/roy-2.png"],
     logo: ["/images/roy-logo.png"],
     hero: ["/images/roy-2.png"],
@@ -90,7 +90,7 @@ export const projects = [
     id: 5,
     title: "WINEWEB",
     des: "React + NodeJs | NodeJs + Express",
-    preview: "/images/wineweb.gif",
+    preview: "/images/wineweb-low.gif",
     img: [
       "/images/wineweb-1.png", 
       "/images/wineweb-2.png", 
@@ -114,7 +114,7 @@ export const projects = [
     id: 6,
     title: "WORKOUTSWEB",
     des: "React + NodeJs | NodeJs + Express",
-    preview: "/images/workoutsweb.gif",
+    preview: "/images/workoutsweb-low.gif",
     img: [ 
       "/images/workoutsweb-1.png", 
       "/images/workoutsweb-2.png",
