@@ -105,7 +105,7 @@ export const projects = [
     ],
     credits: [
       { role: "Developer", person: "Iñigo Esteban" },
-      { role: "Developer", person: "Félix F" }
+      { role: "Developer", person: "Félix Romero" }
 
     ],
     year: "2024",
@@ -128,7 +128,7 @@ export const projects = [
     ],
     credits: [
       { role: "Developer", person: "Iñigo Esteban" },
-      { role: "Developer", person: "Félix F" }
+      { role: "Developer", person: "Félix Romero" }
 
     ],
     year: "2024",
