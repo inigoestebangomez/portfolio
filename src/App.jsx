@@ -3,6 +3,7 @@ import Home from "./Pages/Home";
 import Work from "./Pages/Work";
 import "./App.css";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/work/:slug" element={<Work />} />
       </Routes>
+      
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }
