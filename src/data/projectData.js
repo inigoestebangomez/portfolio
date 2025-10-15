@@ -62,7 +62,8 @@ export const projects = [
     hero: ["/images/coolmex-2.png"],
     slug: "coolmex",
     services: [
-      { name: "GitHub", url: "https://github.com/inigoestebangomez/cool-mex-client" }
+      { name: "GitHub", url: "https://github.com/inigoestebangomez/cool-mex-client" },
+      { name: "Live", url: "https://cool-mex.netlify.app" }
     ],
     credits: [
       { role: "Developer", person: "Iñigo Esteban"}
