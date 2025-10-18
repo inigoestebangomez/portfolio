@@ -90,7 +90,7 @@ export const projects = [
   {
     id: 5,
     title: "WINEWEB",
-    des: "React + NodeJs | NodeJs + Express",
+    des: "React + NodeJs",
     preview: "/images/wineweb-low.gif",
     img: [
       "/images/wineweb-1.png", 
@@ -114,7 +114,7 @@ export const projects = [
   {
     id: 6,
     title: "WORKOUTSWEB",
-    des: "React + NodeJs | NodeJs + Express",
+    des: "React + NodeJs",
     preview: "/images/workoutsweb-low.gif",
     img: [ 
       "/images/workoutsweb-1.png", 
@@ -134,6 +134,27 @@ export const projects = [
     ],
     year: "2024",
   },
+  {
+    id: 7,
+    title: "DUTTI",
+    des: "Angular + NodeJs",
+    preview: "/images/dutti-low.gif",
+    img: [ 
+      "/images/dutti-1.png", 
+      "/images/dutti-2.png",
+      "/images/dutti-3.png"],
+    logo: ["/images/dutti-logo.png"],
+    hero: ["/images/dutti-1.png"],
+    slug: "dutti",
+    services: [
+      { name: "GitHub", url: "https://github.com/inigoestebangomez/dutti" },
+    ],
+    credits: [
+      { role: "Developer", person: "Iñigo Esteban" }
+    ],
+    year: "2025",
+  },
+
 ].map((p) => ({
   ...p,
   slug: slugify(p.title),
