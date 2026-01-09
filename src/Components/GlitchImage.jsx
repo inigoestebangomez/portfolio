@@ -21,7 +21,11 @@ const GlitchImage = () => {
       {isLoading && <LoadingSpinner />}
       <div
         className="glitch-image-container"
-        style={{ "--stacks": 3, opacity: isLoading ? 0 : 1 }}
+        style={{
+          "--stacks": 3,
+          opacity: isLoading ? 0 : 1,
+          transition: "opacity 0.5s ease-in-out",
+        }}
       >
         <img src={frontFace.img} alt="Glitch" style={{ "--index": 0 }} />
         <img src={frontFace.img} alt="Glitch" style={{ "--index": 1 }} />
