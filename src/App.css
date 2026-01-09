@@ -77,10 +77,41 @@ p {
 }
 
 /* ===== GLITCH ===== */
+/* === Spinner === */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid rgba(31, 41, 55, 0.1);
+  border-top-color: var(--color-overlay);
+  border-radius: 50%;
+}
+
+.spinner-text {
+  font-family: var(--font-family-sora);
+  font-size: 0.875rem;
+  color: var(--color-overlay);
+  letter-spacing: 0.05em;
+}
+
 .glitch-wrapper {
   position: relative;
   display: inline-block;
 }
+
+
 .glitch-image-container {
   position: relative;
   display: grid;
