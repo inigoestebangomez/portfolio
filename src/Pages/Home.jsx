@@ -58,7 +58,7 @@ function Home() {
             style={{ x: h2X, opacity: textOpacity }}
             className="parallax-h2"
           >
-            WEB DEVELOPER
+            SOFTWARE ENG.
           </motion.h2>
         </div>
         <div className={activeGlitch ? "activate-glitch" : ""}>
