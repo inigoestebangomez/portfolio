@@ -46,26 +46,28 @@ function Home() {
 
   return (
     <>
-      <section ref={refX} className="parallax-container">
-        <div className="parallax-text-wrapper">
-          <motion.h1
-            style={{ x: h1X, opacity: textOpacity }}
-            className="parallax-h1"
-          >
-            IÑIGO ESTEBAN
-          </motion.h1>
-          <motion.h2
-            style={{ x: h2X, opacity: textOpacity }}
-            className="parallax-h2"
-          >
-            SOFTWARE ENG.
-          </motion.h2>
-        </div>
-        <div className={activeGlitch ? "activate-glitch" : ""}>
-          <GlitchImage />
-        </div>
-      </section>
-      <ProjectsSection />
+      <main>
+        <section ref={refX} className="parallax-container">
+          <div className="parallax-text-wrapper">
+            <motion.h1
+              style={{ x: h1X, opacity: textOpacity }}
+              className="parallax-h1"
+            >
+              IÑIGO ESTEBAN
+            </motion.h1>
+            <motion.h2
+              style={{ x: h2X, opacity: textOpacity }}
+              className="parallax-h2"
+            >
+              SOFTWARE ENG.
+            </motion.h2>
+          </div>
+          <div className={activeGlitch ? "activate-glitch" : ""}>
+            <GlitchImage />
+          </div>
+        </section>
+        <ProjectsSection />
+      </main>
       <Footer />
     </>
   );

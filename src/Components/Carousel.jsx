@@ -46,11 +46,6 @@ function Carousel() {
       <p className="recent-work-p">RECENT WORK</p>
       <ul className="project-list">
         {projects.map((p) => (
-          <Link
-            key={p.id}
-            to={`/work/${p.slug}`}
-            className="project-item-link"
-          >
             <motion.li
               key={p.id}
               className="project-item"
@@ -62,11 +57,15 @@ function Carousel() {
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <img src={p.preview} alt={p.title} />
-              <h3>{p.title}</h3>
-              <p>{p.des}</p>
+              <Link
+                to={`/work/${p.slug}`}
+                className="project-item-link"
+              >
+                <img src={p.preview} alt={p.title} />
+                <h3>{p.title}</h3>
+                <p>{p.des}</p>
+              </Link>
             </motion.li>
-          </Link>
         ))}
       </ul>
 
