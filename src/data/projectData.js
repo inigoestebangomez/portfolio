@@ -9,14 +9,14 @@ export const projects = [
     id: 1,
     title: "WINE TASTING NOTES",
     des: "React Native + Expo Router | Supabase",
-    preview: "/images/wine-tasting-notes.gif",
+    preview: "/images/wine-tasting-notes.webp",
     img: [
-      "/images/wine-tasting-notes-1.png", 
-      "/images/wine-tasting-notes-2.png", 
-      "/images/wine-tasting-notes-3.png"
+      "/images/wine-tasting-notes-1.webp", 
+      "/images/wine-tasting-notes-2.webp", 
+      "/images/wine-tasting-notes-3.webp"
     ],
-    logo: ["/images/wine-tasting-notes-logo.png"],
-    hero: ["/images/wine-tasting-notes-hero.png"],
+    logo: ["/images/wine-tasting-notes-logo.webp"],
+    hero: ["/images/wine-tasting-notes-hero.webp"],
     slug: "wine-tasting-notes",
     services: [
       { name: "iOS", url: "https://apps.apple.com/es/app/wine-tasting-notes/id6758449813" },
@@ -31,15 +31,15 @@ export const projects = [
     id: 2,
     title: "LIVEWAVE",
     des: "React Native | Supabase",
-    preview: "/images/livewave.gif",
+    preview: "/images/livewave.webp",
     img: [
-      "/images/livewave-1.png",
-      "/images/livewave-2.png",
-      "/images/livewave-3.png",
-      "/images/livewave-4.png"
+      "/images/livewave-1.webp",
+      "/images/livewave-2.webp",
+      "/images/livewave-3.webp",
+      "/images/livewave-4.webp"
     ],
-    hero: ["/images/livewave-hero.png"],
-    logo: ["/images/livewave-logo.png"],
+    hero: ["/images/livewave-hero.webp"],
+    logo: ["/images/livewave-logo.webp"],
     slug: "livewave",
     services: [
       { name: "GitHub", url: "https://github.com/inigoestebangomez/livewave" }
@@ -53,14 +53,14 @@ export const projects = [
     id: 3,
     title: "COOLMEX",
     des: "React + NodeJs | NodeJs + Express",
-    preview: "/images/coolmex-low.gif",
+    preview: "/images/coolmex-low.webp",
     img: [ 
-      "/images/coolmex-1.png" ,
-      "/images/coolmex-2.png", 
-      "/images/coolmex-3.png"
+      "/images/coolmex-1.webp" ,
+      "/images/coolmex-2.webp", 
+      "/images/coolmex-3.webp"
     ],
-    logo: ["/images/coolmex-logo.png"],
-    hero: ["/images/coolmex-2.png"],
+    logo: ["/images/coolmex-logo.webp"],
+    hero: ["/images/coolmex-2.webp"],
     slug: "coolmex",
     services: [
       { name: "GitHub", url: "https://github.com/inigoestebangomez/cool-mex-client" },
@@ -75,10 +75,10 @@ export const projects = [
     id: 4,
     title: "ROY",
     des: "VueJs + NuxtJs",
-    preview: "/images/roy-low.gif",
-    img: ["/images/roy-4.png", "/images/roy-1.png", "/images/roy-2.png"],
-    logo: ["/images/roy-logo.png"],
-    hero: ["/images/roy-2.png"],
+    preview: "/images/roy-low.webp",
+    img: ["/images/roy-4.webp", "/images/roy-1.webp", "/images/roy-2.webp"],
+    logo: ["/images/roy-logo.webp"],
+    hero: ["/images/roy-2.webp"],
     slug: "roy",
     services: [
       { name: "GitHub", url: "https://github.com/inigoestebangomez/roy" }
@@ -92,14 +92,14 @@ export const projects = [
     id: 5,
     title: "WINEWEB",
     des: "React + NodeJs",
-    preview: "/images/wineweb-low.gif",
+    preview: "/images/wineweb-low.webp",
     img: [
-      "/images/wineweb-1.png", 
-      "/images/wineweb-2.png", 
-      "/images/wineweb-3.png"
+      "/images/wineweb-1.webp", 
+      "/images/wineweb-2.webp", 
+      "/images/wineweb-3.webp"
     ],
-    logo: ["/images/wineweb-logo.png"],
-    hero: ["/images/wineweb.png"],
+    logo: ["/images/wineweb-logo.webp"],
+    hero: ["/images/wineweb.webp"],
     slug: "wineweb",
     services: [
       { name: "GitHub", url: "https://github.com/inigoestebangomez/cellar-app" },
@@ -116,13 +116,13 @@ export const projects = [
     id: 6,
     title: "WORKOUTSWEB",
     des: "React + NodeJs",
-    preview: "/images/workoutsweb-low.gif",
+    preview: "/images/workoutsweb-low.webp",
     img: [ 
-      "/images/workoutsweb-1.png", 
-      "/images/workoutsweb-2.png",
-      "/images/workoutsweb-3.png"],
-    logo: ["/images/workoutsweb-logo.png"],
-    hero: ["/images/workoutsweb-1.png"],
+      "/images/workoutsweb-1.webp", 
+      "/images/workoutsweb-2.webp",
+      "/images/workoutsweb-3.webp"],
+    logo: ["/images/workoutsweb-logo.webp"],
+    hero: ["/images/workoutsweb-1.webp"],
     slug: "workoutsweb",
     services: [
       { name: "GitHub", url: "https://github.com/FelixFS3D/client-workoutweb" },
@@ -139,13 +139,13 @@ export const projects = [
     id: 7,
     title: "DUTTI",
     des: "Angular + NodeJs",
-    preview: "/images/dutti-low.gif",
+    preview: "/images/dutti-low.webp",
     img: [ 
-      "/images/dutti-1.png", 
-      "/images/dutti-2.png",
-      "/images/dutti-3.png"],
-    logo: ["/images/dutti-logo.png"],
-    hero: ["/images/dutti-1.png"],
+      "/images/dutti-1.webp", 
+      "/images/dutti-2.webp",
+      "/images/dutti-3.webp"],
+    logo: ["/images/dutti-logo.webp"],
+    hero: ["/images/dutti-1.webp"],
     slug: "dutti",
     services: [
       { name: "GitHub", url: "https://github.com/inigoestebangomez/dutti" },
@@ -162,5 +162,5 @@ export const projects = [
 }));
 
 export const frontFace = {
-  img: "/images/Prueba de cara.png"
+  img: "/images/Prueba de cara.webp"
 }
