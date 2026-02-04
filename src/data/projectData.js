@@ -19,7 +19,6 @@ export const projects = [
     hero: ["/images/wine-tasting-notes-hero.png"],
     slug: "wine-tasting-notes",
     services: [
-      { name: "GitHub", url: "https://github.com/inigoestebangomez/wine-tasting-notes" },
       { name: "iOS", url: "https://apps.apple.com/es/app/wine-tasting-notes/id6758449813" },
       { name: "Android", url: "https://play.google.com/store/apps/details?id=com.inigoesteban.winetastingnotes" }
     ],
