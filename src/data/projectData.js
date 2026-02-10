@@ -9,7 +9,7 @@ export const projects = [
     id: 1,
     title: "WINE TASTING NOTES",
     des: "React Native + Expo Router | Supabase",
-    preview: "/images/wine-tasting-notes.webp",
+    preview: "/images/wine-tasting-notes.gif",
     img: [
       "/images/wine-tasting-notes-1.webp", 
       "/images/wine-tasting-notes-2.webp", 
@@ -31,7 +31,7 @@ export const projects = [
     id: 2,
     title: "LIVEWAVE",
     des: "React Native | Supabase",
-    preview: "/images/livewave.webp",
+    preview: "/images/livewave.gif",
     img: [
       "/images/livewave-1.webp",
       "/images/livewave-2.webp",
@@ -53,7 +53,7 @@ export const projects = [
     id: 3,
     title: "COOLMEX",
     des: "React + NodeJs | NodeJs + Express",
-    preview: "/images/coolmex-low.webp",
+    preview: "/images/coolmex-low.gif",
     img: [ 
       "/images/coolmex-1.webp" ,
       "/images/coolmex-2.webp", 
@@ -75,7 +75,7 @@ export const projects = [
     id: 4,
     title: "ROY",
     des: "VueJs + NuxtJs",
-    preview: "/images/roy-low.webp",
+    preview: "/images/roy-low.gif",
     img: ["/images/roy-4.webp", "/images/roy-1.webp", "/images/roy-2.webp"],
     logo: ["/images/roy-logo.webp"],
     hero: ["/images/roy-2.webp"],
@@ -92,7 +92,7 @@ export const projects = [
     id: 5,
     title: "WINEWEB",
     des: "React + NodeJs",
-    preview: "/images/wineweb-low.webp",
+    preview: "/images/wineweb-low.gif",
     img: [
       "/images/wineweb-1.webp", 
       "/images/wineweb-2.webp", 
@@ -116,7 +116,7 @@ export const projects = [
     id: 6,
     title: "WORKOUTSWEB",
     des: "React + NodeJs",
-    preview: "/images/workoutsweb-low.webp",
+    preview: "/images/workoutsweb-low.gif",
     img: [ 
       "/images/workoutsweb-1.webp", 
       "/images/workoutsweb-2.webp",
@@ -139,7 +139,7 @@ export const projects = [
     id: 7,
     title: "DUTTI",
     des: "Angular + NodeJs",
-    preview: "/images/dutti-low.webp",
+    preview: "/images/dutti-low.gif",
     img: [ 
       "/images/dutti-1.webp", 
       "/images/dutti-2.webp",
