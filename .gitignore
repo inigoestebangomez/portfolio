@@ -5,4 +5,3 @@ dist
 
 # Ignore heavy images in public/images (converted to WebP)
 public/images/*.png
-public/images/*.gif
