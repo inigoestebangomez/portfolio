@@ -641,12 +641,12 @@ footer {
 /* LAPTOP DESKTOP ↓ */
 @media (max-width: 1520px) and (min-width: 1025px) {
   .parallax-text-wrapper {
-    gap: 16rem;
+    gap: 12rem;
   }
 
   .parallax-h1,
   .parallax-h2 {
-    font-size: 4.5rem
+    font-size: 4rem;
   }
 
   .glitch-image-container {
@@ -655,6 +655,21 @@ footer {
 
   .project-item-link {
     text-decoration: none;
+  }
+}
+
+@media (max-width: 1366px) and (min-width: 1025px) {
+  .parallax-text-wrapper {
+    gap: 10rem;
+  }
+
+  .parallax-h1,
+  .parallax-h2 {
+    font-size: 3.2rem;
+  }
+
+  .glitch-image-container {
+    max-width: 55rem;
   }
 }
 
