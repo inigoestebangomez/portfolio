@@ -20,7 +20,8 @@ export const projects = [
     slug: "wine-tasting-notes",
     services: [
       { name: "iOS", url: "https://apps.apple.com/es/app/wine-tasting-notes/id6758449813" },
-      { name: "Android", url: "https://play.google.com/store/apps/details?id=com.inigo.winetastingnotes" }
+      { name: "Android", url: "https://play.google.com/store/apps/details?id=com.inigo.winetastingnotes" },
+      { name: "Web", url: "https://winetastingnotes.vercel.app" }
     ],
     credits: [
       { role: "Developer", person: "Iñigo Esteban" }
